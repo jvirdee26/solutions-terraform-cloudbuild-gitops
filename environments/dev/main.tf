@@ -39,9 +39,9 @@ module "firewall" {
   subnet  = "${module.vpc.subnet}"
 }
 
-module "pubsub" {
+module "pubsub_testing" {
   source = "../../modules/pubsub_testing"
   project = var.project
-  topic_name   = module.pubsub_testing.topic_name
-  subscription_name = module.pubsub_testing.subscription_name
+  topic_name   = "${local.env}-topic"
+  subscription_name = "${local.env}-subscription"
 }
