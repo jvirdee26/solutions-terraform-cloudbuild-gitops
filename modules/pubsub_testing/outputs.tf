@@ -1,3 +1,3 @@
 output "topic_name" {
-  value = module.pubsub-testing.topic 
+  value = module.pubsub_testing.topic 
 }
