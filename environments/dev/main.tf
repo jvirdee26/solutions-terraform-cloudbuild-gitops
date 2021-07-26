@@ -38,3 +38,10 @@ module "firewall" {
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
+
+module "pubsub" {
+  source = "../../modules/pubsub_testing"
+  project = var.project
+  topic_name   = module.pubsub_testing.topic_name
+  subscription_name = module.pubsub_testing.subscription_name
+}
